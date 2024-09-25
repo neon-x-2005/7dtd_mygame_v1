@@ -1,10 +1,4 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <persistentplayerdata>
-  <player platform="EOS" userid="0002036aaf3140f3a81b4663038c6e79" nativeplatform="Steam" nativeuserid="76561197983864989" playername="neon-x-2005" lastlogin="2024-09-25 02:27:51" position="-25,61,483">
-    <questpositions>
-      <position id="-1628642260" positiondatatype="0" pos="-535,62,480" />
-      <position id="-1628642260" positiondatatype="2" pos="-52,57,472" />
-      <position id="-1628642260" positiondatatype="7" pos="-20,61,488" />
-    </questpositions>
-  </player>
+  <player platform="EOS" userid="0002036aaf3140f3a81b4663038c6e79" nativeplatform="Steam" nativeuserid="76561197983864989" playername="neon-x-2005" lastlogin="2024-09-26 01:47:42" position="-249,69,433" />
 </persistentplayerdata>
