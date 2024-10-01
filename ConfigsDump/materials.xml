@@ -827,7 +827,7 @@ Do not rename "basic" materials like cloth, metal, or stone. These auto-generate
     <property name="damage_category" value="organic" />
     <property name="surface_category" value="organic" />
     <property name="particle_category" value="organic" />
-    <property name="forge_category" value="leather" />
+    <property name="forge_category" value="cloth" />
     <property name="Hardness" type="float" value="1" />
     <property name="stepsound" value="cloth" />
     <property name="stability_glue" value="5" />

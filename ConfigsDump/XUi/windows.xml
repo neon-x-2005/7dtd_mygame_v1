@@ -3102,8 +3102,9 @@
       <simplebutton name="btnExportPrefab" depth="3" width="250" height="46" caption_key="xuiMenuExportPrefab" font_size="40" />
       <simplebutton name="btnTpPoi" depth="3" width="250" height="46" caption_key="xuiMenuTeleportPoiButton" font_size="40" />
     </grid>
-    <label depth="4" pos="0,-1000" width="500" height="40" text_key="lblAchievementsDisabled" color="[gold]" visible="{creativeenabled}" tooltip_key="ttAchievementsDisabled" platform="!PS5" pivot="bottomleft" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2" />
-    <label depth="4" pos="0,-1000" width="500" height="40" text_key="lblAchievementsDisabledPS5" color="[gold]" visible="{creativeenabled}" tooltip_key="ttAchievementsDisabledPS5" platform="PS5" pivot="bottomleft" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2" />
+    <simplebutton name="btnBugReport" pos="0, -950" depth="3" width="250" height="46" caption_key="xuiBugReportHeader" font_size="40" visible="{bug_reporting}" />
+    <label depth="4" pos="0,-925" width="500" height="40" text_key="lblAchievementsDisabled" color="[gold]" visible="{creativeenabled}" tooltip_key="ttAchievementsDisabled" platform="!PS5" pivot="bottomleft" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2" />
+    <label depth="4" pos="0,-925" width="500" height="40" text_key="lblAchievementsDisabledPS5" color="[gold]" visible="{creativeenabled}" tooltip_key="ttAchievementsDisabledPS5" platform="PS5" pivot="bottomleft" effect="Outline8" effect_color="0,0,0,255" effect_distance="2,2" />
     <!-- </panel> -->
   </window>
   <window name="exportPrefab" anchor="CenterCenter" pos="-250,150" width="500" height="250" controller="ExportPrefab" cursor_area="true">
@@ -4157,5 +4158,37 @@
   <window name="windowDemo" pos="-922,521" depth="20000" width="1845" height="1040" controller="DemoWindow">
     <texture depth="8" texture="Textures/UI/xbox_demo_screen" width="100%" height="100%" visible="{is_xbox}" />
     <texture depth="8" texture="Textures/UI/ps5_demo_screen" width="100%" height="100%" visible="{is_ps5}" />
+  </window>
+  <window name="bugReport" controller="BugReportWindow" anchor="CenterCenter" pos="-400,430" width="800" height="800" cursor_area="true" depth="50">
+    <panel name="noclick" depth="0" createuipanel="true" on_press="true" pos="-4000,4000" width="8000" height="8000" disableautobackground="true" visible="{# !is_modal}" gamepad_selectable="false">
+      <sprite depth="0" name="backgroundMain" sprite="menu_empty" color="0,0,0,200" type="sliced" fillcenter="true" />
+    </panel>
+    <panel name="header" pos="0,0" height="43" depth="1" backgroundspritename="ui_game_panel_header" bordercolor="[black]" borderthickness="3">
+      <label style="header.name" pos="6,-6" width="550" text_key="xuiBugReportHeader" />
+    </panel>
+    <panel name="content" pos="0,-46" height="800" depth="1" backgroundcolor="[darkGrey]" bordercolor="[black]" borderthickness="3" pivot="center">
+      <label depth="3" name="descriptionText" pos="25,-25" width="750" text_key="xuiBugReportDescription" font_size="28" overflow="resizeheight" upper_case="false" visible="{# can_submit}" />
+      <label depth="3" name="rejectedText" pos="25,-25" width="750" text_key="xuiBugReportRejected" color="[red]" font_size="28" overflow="resizeheight" upper_case="false" visible="{# !can_submit}" />
+      <label depth="3" name="lblAttachScreenshot" pos="25,-125" width="425" height="32" justify="right" text_key="xuiAttachScreenshot" tooltip_key="xuiAttachScreenshotTooltip" font_size="28" upper_case="false" visible="{# in_game}" />
+      <combobox pos="475,-125" width="300" height="32" name="comboAttachScreenshot" type="ComboBoxBool" localization_prefix="xuiComboYesNo" tooltip_key="xuiAttachScreenshotTooltip" visible="{# in_game}" />
+      <label depth="3" name="lblAttachSaveDescMenu" pos="25,-175" width="750" height="64" justify="left" text_key="xuiAttachSaveDescMenu" font_size="28" upper_case="false" />
+      <label depth="3" name="lblAttachSaveDescInGame" pos="25,-175" width="750" height="64" justify="right" text_key="xuiAttachSaveDescInGame" font_size="28" upper_case="false" />
+      <label depth="3" name="lblAttachSave" pos="25,-250" width="425" height="32" justify="right" text_key="xuiAttachSave" font_size="28" upper_case="false" visible="{# attach_saves_enabled}" />
+      <combobox pos="475,-250" width="300" height="32" name="comboAttachSave" type="ComboBoxBool" localization_prefix="xuiComboYesNo" visible="{# attach_saves_enabled}" />
+      <textfield name="txtDescription" depth="5" pos="25,-300" width="750" height="400" pivot="topLeft" on_hover="true" on_return="NewLine" justify="left" font_size="24" character_limit="2048" />
+      <simplebutton name="btnSubmit" depth="3" pos="50, -725" width="200" height="48" font_size="32" caption_key="xuiSubmit" upper_case="true" />
+      <simplebutton name="btnCancel" depth="3" pos="550, -725" width="200" height="48" font_size="32" caption_key="xuiCancel" upper_case="true" />
+    </panel>
+  </window>
+  <window name="progress" depth="200" pos="-200,50" width="400" height="100" anchor="CenterCenter" controller="ProgressWindow">
+    <panel name="pnlShadow" pos="-3000,3000" width="10000" height="10000" depth="1" createuipanel="true" on_press="true" disableautobackground="true" visible="{use_shadow}" gamepad_selectable="false">
+      <sprite depth="0" name="backgroundMain" sprite="menu_empty3px" color="30,30,30,160" type="sliced" fillcenter="true" />
+    </panel>
+    <panel name="noclick" depth="2" createuipanel="true" pos="-20,20" width="440" height="140" clipping="softclip" clippingsoftness="20,20" disableautobackground="true">
+      <sprite depth="0" name="backgroundMain" sprite="menu_empty" color="0,0,0,190" type="sliced" fillcenter="true" />
+    </panel>
+    <panel depth="10" createuipanel="true" disableautobackground="true">
+      <label name="lblProgress" pos="200,-50" width="380" height="80" font_size="32" justify="center" pivot="center" />
+    </panel>
   </window>
 </windows>

@@ -7901,7 +7901,7 @@
     </action>
     <action class="TwitchStartCooldown">
       <property name="phase" value="2" />
-      <property name="time" value="20" />
+      <property name="time" value="30" />
     </action>
   </action_sequence>
   <action_sequence name="action_dismantle_vehicle">

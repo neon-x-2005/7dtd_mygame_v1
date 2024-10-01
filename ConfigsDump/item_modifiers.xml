@@ -10,6 +10,8 @@
     <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab" />
     <property name="EconomicValue" value="400" />
     <property name="Group" value="Mods,Tool/Weapon Mods" />
+    <property name="SoundPickup" value="mod_grab" />
+    <property name="SoundPlace" value="mod_place" />
   </item_modifier>
   <!-- *** Weapon_Attachments -->
   <!-- <item_modifier name="modGunSoundSuppressorSilencer" installable_tags="gun" modifier_tags="barrelAttachment" blocked_tags="noMods,noSilencer" type="attachment"> -->
@@ -237,9 +239,8 @@
       <triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser" />
       <triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser" />
       <triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="gunlaser/gunlaser" />
-      <!-- Needs a code polish pass to prevent the light sounds from activating when starting the game or swapping weapons -->
-      <!-- <triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
-      <!-- <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
+      <triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false" />
+      <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false" />
     </effect_group>
     <effect_group tiered="false" name="mod effects">
       <passive_effect name="SpreadMultiplierHip" operation="perc_add" value="-.2" />
@@ -322,9 +323,8 @@
       <triggered_effect trigger="onSelfItemActivate" action="SetTransformActive" active="true" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource" />
       <triggered_effect trigger="onSelfItemDeactivate" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource" />
       <triggered_effect trigger="onSelfEquipStop" action="SetTransformActive" active="false" parent_transform="#HeldItemRoot" transform_path="flashlight_lightSource" />
-      <!-- Needs a code polish pass to prevent the light sounds from activating when starting the game or swapping weapons -->
-      <!-- <triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
-      <!-- <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
+      <triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false" />
+      <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false" />
     </effect_group>
   </item_modifier>
   <!-- visible -->
@@ -1472,9 +1472,8 @@
       <triggered_effect trigger="onSelfEquipStop" action="RemovePart" part="HeadLight" />
       <triggered_effect trigger="onSelfItemActivate" action="SetPartActive" part="HeadLight" active="true" />
       <triggered_effect trigger="onSelfItemDeactivate" action="SetPartActive" part="HeadLight" active="false" />
-      <!-- Needs a code polish pass to prevent the light sounds from activating when starting the game or swapping weapons -->
-      <!-- <triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
-      <!-- <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
+      <triggered_effect trigger="onSelfItemActivate" silent_on_equip="true" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false" />
+      <triggered_effect trigger="onSelfItemDeactivate" silent_on_equip="true" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false" />
     </effect_group>
   </item_modifier>
   <item_modifier name="modArmorCigar" installable_tags="armorHead" modifier_tags="cigar" blocked_tags="noMods" type="attachment">
@@ -1568,9 +1567,8 @@
       <triggered_effect trigger="onSelfItemActivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="1" fade="0" />
       <triggered_effect trigger="onSelfItemDeactivate" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0" />
       <triggered_effect trigger="onSelfEquipStop" action="ModifyScreenEffect" effect_name="NightVision" intensity="0" fade="0" />
-      <!-- Needs a code polish pass to prevent the light sounds from activating when starting the game or swapping weapons -->
-      <!-- <triggered_effect trigger="onSelfItemActivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
-      <!-- <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" target="self" sound="flashlight_toggle" play_in_head="false"/> -->
+      <triggered_effect trigger="onSelfItemActivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false" />
+      <triggered_effect trigger="onSelfItemDeactivate" action="PlaySound" silent_on_equip="true" target="self" sound="flashlight_toggle" play_in_head="false" />
     </effect_group>
   </item_modifier>
   <!-- *** Dye_Mods -->
@@ -1782,7 +1780,7 @@
     <property name="TraderStageTemplate" value="modsTier2" />
     <property name="CustomIcon" value="modVehicleReserveFuelTank" />
     <effect_group tiered="false">
-      <passive_effect name="VehicleFuelMaxPer" operation="perc_set" value="1.5" />
+      <passive_effect name="VehicleFuelMaxPer" operation="perc_set" value="1.8" />
     </effect_group>
   </item_modifier>
   <item_modifier name="modVehiclePlow" installable_tags="vplow" modifier_tags="plow" blocked_tags="noMods" type="attachment">
@@ -1792,8 +1790,8 @@
     <property name="CustomIcon" value="modVehiclePlow" />
     <effect_group tiered="false">
       <passive_effect name="VehicleEntityDamage" operation="perc_add" value=".6" />
-      <passive_effect name="VehicleBlockDamage" operation="perc_add" value=".6" />
-      <passive_effect name="VehicleStrongSelfDamage" operation="perc_set" value=".33" />
+      <passive_effect name="VehicleBlockDamage" operation="perc_add" value=".56" />
+      <passive_effect name="VehicleStrongSelfDamage" operation="perc_set" value=".25" />
     </effect_group>
   </item_modifier>
   <item_modifier name="modVehicleArmor" installable_tags="varmor" modifier_tags="armor" blocked_tags="noMods" type="attachment">
@@ -1803,8 +1801,8 @@
     <property name="CustomIcon" value="modVehicleArmor" />
     <effect_group tiered="false">
       <passive_effect name="VehicleEntityDamage" operation="perc_add" value=".5" />
-      <passive_effect name="VehicleBlockDamage" operation="perc_add" value=".4" />
-      <passive_effect name="VehicleStrongSelfDamage" operation="perc_set" value=".33" />
+      <passive_effect name="VehicleBlockDamage" operation="perc_add" value=".38" />
+      <passive_effect name="VehicleStrongSelfDamage" operation="perc_set" value=".3" />
     </effect_group>
   </item_modifier>
   <!-- *** Robotic_Drone_Mods -->

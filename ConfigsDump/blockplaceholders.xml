@@ -2810,6 +2810,22 @@
     <block name="cntBookPile14" prob="1" />
     <block name="cntBookPile15" prob="1" />
   </placeholder>
+  <placeholder name="cntBookPile01AirRandomLootHelper">
+    <block name="air" prob=".5" />
+    <block name="cntBookPile01" prob=".5" />
+  </placeholder>
+  <placeholder name="cntBookPile02AirRandomLootHelper">
+    <block name="air" prob=".5" />
+    <block name="cntBookPile02" prob=".5" />
+  </placeholder>
+  <placeholder name="cntBookPile03AirRandomLootHelper">
+    <block name="air" prob=".5" />
+    <block name="cntBookPile03" prob=".5" />
+  </placeholder>
+  <placeholder name="cntBookPile04AirRandomLootHelper">
+    <block name="air" prob=".5" />
+    <block name="cntBookPile04" prob=".5" />
+  </placeholder>
   <!-- *** GUN_RACKS -->
   <placeholder name="cntGunRackSmallRandomLootHelper">
     <block name="cntGunRackSmallEmpty01" prob=".22" />

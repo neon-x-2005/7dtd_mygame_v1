@@ -10,6 +10,9 @@
 <!-- Can be spawned in F6 Menu and Console (Default setting if no property set except when extended) -->
 <!-- <property name="SwapMats" value="@:Entities/Zombies/Zombies/Materials/HD_Arlene_Radiated2.mat,@:Entities/Zombies/Zombies/Materials/HD_Arlene_Radiated3.mat"/> -->
 <!-- Swaps materials for index 0 to x based on commas. Empty commas like ,, skip over that index -->
+<!-- AI -->
+<!-- <property name="AITarget-" value="SetNearestEntityAsTarget" data="class=EntityPlayer,13,8"/>-->
+<!-- Class name, hear distance, see distance (negative to not apply senseScale to distance) -->
 <entity_classes>
   <!-- *** PLAYER -->
   <!-- *** PLAYER_NEW_MALE -->
@@ -3211,6 +3214,7 @@
     <property name="ParticleOnDeath" value="blood_death" />
     <property name="SoundHurt" value="stagpain" />
     <property name="SoundDeath" value="stagdeath" />
+    <property name="AISeeOffset" value=".2" />
     <property name="AIPathCostScale" value="100, 100" />
     <property name="AITask-1" value="RunawayWhenHurt" />
     <property name="AITask-2" value="RunawayFromEntity" data="class=EntityPlayer,EntityZombie,EntityEnemyAnimal" />
@@ -3279,6 +3283,7 @@
     <property name="SoundDeath" value="stagdeath" />
     <property name="SightRange" value="37" />
     <!-- distance in m -->
+    <property name="AISeeOffset" value=".5" />
     <!-- Gameplay  -->
     <property name="PainResistPerHit" value=".75" />
     <property name="MaxTurnSpeed" value="220" />
@@ -3437,6 +3442,7 @@
     <property name="Faction" value="animals" />
     <property name="AIGroupCircle" value="1" />
     <property name="AINoiseSeekDist" value="3" />
+    <property name="AISeeOffset" value=".4" />
     <property name="AIPathCostScale" value=".4, .6" />
     <property name="AITask-1" value="BreakBlock" />
     <property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityPlayer,20,EntityBandit,20" />
@@ -3529,6 +3535,7 @@
     <property name="RagdollOnDeathChance" value=".5" />
     <property name="PhysicsBody" value="bear" />
     <property name="Mass" value="600" />
+    <property name="AISeeOffset" value=".8" />
     <property name="AITask-1" value="BreakBlock" />
     <property name="AITask-2" value="DestroyArea" />
     <property name="AITask-3" value="Territorial" />
@@ -3539,7 +3546,7 @@
     <property name="AITask-8" value="" />
     <property name="AITarget-1" value="SetAsTargetIfHurt" />
     <property name="AITarget-2" value="BlockingTargetTask" />
-    <property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,13,8,EntityBandit,0,-6,EntityAnimalStag,0,0,EntityZombie,0,-6" />
+    <property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,13,9,EntityBandit,0,-6,EntityAnimalStag,0,0,EntityZombie,0,-6" />
     <property name="AITarget-4" value="" />
     <property name="SoundHurt" value="bearpain" />
     <property name="SoundDeath" value="beardeath" />
@@ -3605,7 +3612,7 @@
     <property name="AITask-9" value="" />
     <property name="AITarget-1" value="SetAsTargetIfHurt" />
     <property name="AITarget-2" value="BlockingTargetTask" />
-    <property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,18,13,EntityBandit,0,-8,EntityAnimalStag,0,0" />
+    <property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,16,14,EntityBandit,0,-8,EntityAnimalStag,0,0" />
     <property name="AITarget-4" value="" />
     <!-- Gameplay  -->
     <property name="HandItem" value="meleeHandAnimalZombieBear" />
@@ -3688,9 +3695,10 @@
     <property name="Prefab" value="/Entities/Animals/DireWolf/animalDireWolfPrefab" />
     <property name="SizeScale" value="1.4" />
     <property name="DismemberMultiplierHead" value="0" />
+    <property name="AISeeOffset" value=".9" />
     <property name="AIPathCostScale" value=".15, .2" />
     <property name="AITask" value="  BreakBlock|  DestroyArea|  Territorial|  ApproachDistraction|  ApproachAndAttackTarget class=EntityPlayer,25,EntityBandit,20,EntityAnimalStag,30|  ApproachSpot|  Look|  Wander|  " />
-    <property name="AITarget" value="  SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|  BlockingTargetTask|  SetNearestCorpseAsTarget flags=edible|  SetNearestEntityAsTarget class=EntityPlayer,16,10,EntityBandit,0,-8,EntityAnimalStag,0,0|  " />
+    <property name="AITarget" value="  SetAsTargetIfHurt class=EntityPlayer,EntityBandit,EntityEnemyAnimal|  BlockingTargetTask|  SetNearestCorpseAsTarget flags=edible|  SetNearestEntityAsTarget class=EntityPlayer,17,15,EntityBandit,0,-8,EntityAnimalStag,0,0|  " />
     <property name="SoundAlert" value="wolfdirealert" />
     <property name="SoundAttack" value="wolfdireattack" />
     <property name="SoundDeath" value="wolfdiredeath" />
@@ -3833,6 +3841,7 @@
     <property name="SoundAttack" value="mlionattack" />
     <property name="SoundSense" value="mlionsense" />
     <property name="SoundGiveUp" value="mliongiveup" />
+    <property name="AISeeOffset" value=".8" />
     <property name="AITask-1" value="Leap" data="legs=4" />
     <property name="AITask-2" value="BreakBlock" />
     <property name="AITask-3" value="Territorial" />
@@ -4356,6 +4365,7 @@ Kinda sorta works but is buggy and we don't have time for that.
     <property name="TimeStayAfterDeath" value="0" />
     <effect_group name="Base Effects">
       <passive_effect name="HealthMax" operation="base_set" value="200" />
+      <passive_effect name="BuffResistance" operation="base_set" value="5" tags="buffBurningEnvironment" />
     </effect_group>
     <property name="NavObject" value="supply_drop" />
     <!-- If set this entity shows on the map -->

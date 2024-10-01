@@ -427,61 +427,62 @@
     <property name="spawn_trader" value="false" />
   </township>
   <district name="wilderness">
-    <property name="district_required_township" value="wilderness" />
-    <property name="district_preview_color" value="0.25,0.25,0.25" />
+    <property name="required_township" value="wilderness" />
+    <property name="preview_color" value="0.25,0.25,0.25" />
   </district>
   <district name="countrytown">
-    <property name="district_spawn_weight" value="0.5" />
-    <property name="district_required_township" value="countrytown,forest_countrytown,bforest_countrytown" />
-    <property name="district_preview_color" value="0,0,1" />
+    <property name="spawn_weight" value="0.5" />
+    <property name="required_township" value="countrytown,forest_countrytown,bforest_countrytown" />
+    <property name="preview_color" value="0,0,1" />
   </district>
   <district name="countryresidential">
-    <property name="district_spawn_weight" value="1" />
-    <property name="district_required_township" value="countrytown,forest_countrytown,bforest_countrytown" />
-    <property name="district_preview_color" value="0,1,0" />
+    <property name="spawn_weight" value="1" />
+    <property name="required_township" value="countrytown,forest_countrytown,bforest_countrytown" />
+    <property name="preview_color" value="0,1,0" />
   </district>
   <district name="commercial">
-    <property name="district_spawn_weight" value="0.4" />
-    <property name="district_required_township" value="citybig,wasteland_city,city,town,bforest_town" />
-    <property name="district_preview_color" value="0,0,1" />
+    <property name="spawn_weight" value="0.4" />
+    <property name="required_township" value="citybig,wasteland_city,city,town,bforest_town" />
+    <property name="preview_color" value="0,0,1" />
   </district>
   <district name="industrial">
-    <property name="district_spawn_weight" value="0.2" />
-    <property name="district_required_township" value="citybig,wasteland_city,city,town,bforest_town" />
-    <property name="district_preview_color" value="1,1,0" />
+    <property name="spawn_weight" value="0.2" />
+    <property name="required_township" value="citybig,wasteland_city,city,town,bforest_town" />
+    <property name="preview_color" value="1,1,0" />
   </district>
   <district name="residential">
-    <property name="district_spawn_weight" value="0.5" />
-    <property name="district_required_township" value="citybig,wasteland_city,city,town,bforest_town" />
-    <property name="district_preview_color" value="0,1,0" />
+    <property name="spawn_weight" value="0.5" />
+    <property name="required_township" value="citybig,wasteland_city,city,town,bforest_town" />
+    <property name="preview_color" value="0,1,0" />
   </district>
   <district name="rural">
-    <property name="district_spawn_weight" value="0" />
-    <property name="district_required_township" value="citybig,wasteland_city,city,town,bforest_town" />
-    <property name="district_preview_color" value="0,1,1" />
+    <property name="spawn_weight" value="0" />
+    <property name="required_township" value="citybig,wasteland_city,city,town,bforest_town" />
+    <property name="preview_color" value="0,1,1" />
     <property name="spawn_custom_size_prefabs" value="true" />
   </district>
   <district name="forest_rural">
     <property name="tag" value="rural" />
-    <property name="district_spawn_weight" value="0" />
-    <property name="district_required_township" value="forest_countrytown" />
-    <property name="district_preview_color" value="0,1,1" />
+    <property name="prefab_name" value="rural" />
+    <property name="spawn_weight" value="0" />
+    <property name="required_township" value="forest_countrytown" />
+    <property name="preview_color" value="0,1,1" />
     <property name="spawn_custom_size_prefabs" value="true" />
   </district>
   <district name="downtown">
-    <property name="district_spawn_weight" value="0.3" />
-    <property name="district_required_township" value="citybig,wasteland_city,city" />
-    <property name="district_preview_color" value="0.5,0.5,0.5" />
+    <property name="spawn_weight" value="0.3" />
+    <property name="required_township" value="citybig,wasteland_city,city" />
+    <property name="preview_color" value="0.5,0.5,0.5" />
     <property name="avoided_neighbor_districts" value="rural" />
   </district>
   <district name="oldwest">
-    <property name="district_spawn_weight" value="1" />
-    <property name="district_required_township" value="oldwest" />
-    <property name="district_preview_color" value="0.5,0.5,0.1" />
+    <property name="spawn_weight" value="1" />
+    <property name="required_township" value="oldwest" />
+    <property name="preview_color" value="0.5,0.5,0.1" />
   </district>
   <district name="gateway">
-    <property name="district_spawn_weight" value="0" />
-    <property name="district_preview_color" value="0.75,0.75,0.75" />
+    <property name="spawn_weight" value="0" />
+    <property name="preview_color" value="0.75,0.75,0.75" />
   </district>
   <!-- streettile
 	mintiles, maxtiles limits the count to that range for the entire world. mintiles 0 does not increase chance to get the tile

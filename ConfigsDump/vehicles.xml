@@ -582,28 +582,28 @@ Forces:
       <property name="pose" value="40" />
       <property name="position" value="-.38, .46, 0" />
       <property name="rotation" value="0, 0, 0" />
-      <property name="exit" value="-1.7,0,0 ~ 1.7,0,-1 ~ -.25,0,-3.6 ~ -.25,0,3 ~ -.4,2.1,0" />
+      <property name="exit" value="-1.9,0,0 ~ 1.9,0,-1 ~ -.25,0,-3.6 ~ -.25,0,3 ~ -.4,2.1,0" />
     </property>
     <property class="seat1">
       <property name="class" value="Seat" />
       <property name="pose" value="41" />
       <property name="position" value=".38, .46, 0" />
       <property name="rotation" value="0, 0, 0" />
-      <property name="exit" value="1.7,0,0 ~ -1.7,0,-1 ~ .25,0,-3.6 ~ .25,0,3 ~ .4,2.1,0" />
+      <property name="exit" value="1.9,0,0 ~ -1.9,0,-1 ~ .25,0,-3.6 ~ .25,0,3 ~ .4,2.1,0" />
     </property>
     <property class="seat2">
       <property name="class" value="Seat" />
       <property name="pose" value="42" />
       <property name="position" value="-.327, .609, -1.153" />
       <property name="rotation" value="0, 180, 0" />
-      <property name="exit" value="-1.1,0,-3.2 ~ -1.8,0,-2 ~ 1.8,0,-2.2 ~ -.5,0,-3.6 ~ .5,0,3 ~ -.3,1.4,-1.8" />
+      <property name="exit" value="-1.1,0,-3.2 ~ -2,0,-2 ~ 2,0,-2.2 ~ -.5,0,-3.6 ~ .5,0,3 ~ -.3,1.4,-2" />
     </property>
     <property class="seat3">
       <property name="class" value="Seat" />
       <property name="pose" value="43" />
       <property name="position" value=".327, .609, -1.153" />
       <property name="rotation" value="0, 180, 0" />
-      <property name="exit" value="1.1,0,-3.2 ~ 1.8,0,-2 ~ -1.8,0,-2.2 ~ .5,0,-3.6 ~ -.5,0,3 ~ .3,1.4,-1.8" />
+      <property name="exit" value="1.1,0,-3.2 ~ 2,0,-2 ~ -2,0,-2.2 ~ .5,0,-3.6 ~ -.5,0,3 ~ .3,1.4,-2" />
     </property>
     <property class="seat4">
       <property name="class" value="Seat" />

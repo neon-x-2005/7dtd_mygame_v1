@@ -336,6 +336,12 @@
     <window_group name="demo" defaultSelected="input">
       <window name="windowDemo" />
     </window_group>
+    <window_group name="bugReportWindow" defaultSelected="txtDescription">
+      <window name="bugReport" />
+    </window_group>
+    <window_group name="progress" actionSet="false">
+      <window name="progress" />
+    </window_group>
     <!-- Uncomment this window group and the according window in windows.xml and adapt the latter to your needs, it will show up whenever the user has the ingame menu (ESC) open -->
     <!--
 		<window_group name="serverinfowindow">

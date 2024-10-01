@@ -819,20 +819,20 @@
       <display_entry icon="generatorBankA" name_key="electricianT1" has_quality="false" unlock_level="25">
         <unlock_entry item="generatorbank,electricwirerelay,switch,tripwirepost,ceilingLight01_player,industrialLight01_player,industrialLight02_player,ceilingLight07_player" unlock_tier="1" />
       </display_entry>
-      <display_entry icon="motionsensor" name_key="electricianT2" has_quality="false" unlock_level="50">
+      <display_entry icon="motionsensor" name_key="electricianT2" has_quality="false" unlock_level="45">
         <unlock_entry item="motionsensor,electrictimerrelay,pressureplate,pressureplateLong,spotlightPlayer,speaker" unlock_tier="1" />
       </display_entry>
-      <display_entry icon="carBattery" name_key="electricianT3" has_quality="true" unlock_level="51,60,70,80,90,100">
-        <unlock_entry item="carBattery" unlock_tier="1" />
-      </display_entry>
-      <display_entry icon="batterybank" name_key="electricianT4" has_quality="false" unlock_level="75">
+      <display_entry icon="batterybank" name_key="electricianT3" has_quality="false" unlock_level="55">
         <unlock_entry item="batterybank,vaultDoor01_Powered,vaultDoor01Double_Powered,vaultHatch01_Powered,ironGarageDoor_PoweredBlockVariantHelper,woodenGarageDoor3x3_PoweredBlockVariantHelper,woodenGarageDoor4x3_PoweredBlockVariantHelper,woodenGarageDoor5x3_PoweredBlockVariantHelper,steelGarageDoor3x3_PoweredBlockVariantHelper,steelGarageDoor4x3_PoweredBlockVariantHelper,steelGarageDoor5x3_PoweredBlockVariantHelper,metalReinforcedWoodDrawBridgePowered" unlock_tier="1" />
+      </display_entry>
+      <display_entry icon="carBattery" name_key="electricianT4" has_quality="true" unlock_level="55,60,70,80,90,100">
+        <unlock_entry item="carBattery" unlock_tier="1" />
       </display_entry>
       <effect_group>
         <passive_effect name="RecipeTagUnlocked" operation="base_set" level="25,100" value="1" tags="generatorbank,electricwirerelay,switch,tripwirepost,ceilingLight01_player,industrialLight01_player,industrialLight02_player,ceilingLight07_player" />
-        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="50,100" value="1" tags="motionsensor,electrictimerrelay,pressureplate,pressureplateLong,spotlightPlayer,speaker" />
-        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="75,100" value="1" tags="batterybank,vaultDoor01_Powered,vaultDoor01Double_Powered,vaultHatch01_Powered,ironGarageDoor_PoweredBlockVariantHelper,woodenGarageDoor3x3_PoweredBlockVariantHelper,woodenGarageDoor4x3_PoweredBlockVariantHelper,woodenGarageDoor5x3_PoweredBlockVariantHelper,steelGarageDoor3x3_PoweredBlockVariantHelper,steelGarageDoor4x3_PoweredBlockVariantHelper,steelGarageDoor5x3_PoweredBlockVariantHelper,metalReinforcedWoodDrawBridgePowered" />
-        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="51,100" value="1" tags="carBattery" />
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="45,100" value="1" tags="motionsensor,electrictimerrelay,pressureplate,pressureplateLong,spotlightPlayer,speaker" />
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="batterybank,vaultDoor01_Powered,vaultDoor01Double_Powered,vaultHatch01_Powered,ironGarageDoor_PoweredBlockVariantHelper,woodenGarageDoor3x3_PoweredBlockVariantHelper,woodenGarageDoor4x3_PoweredBlockVariantHelper,woodenGarageDoor5x3_PoweredBlockVariantHelper,steelGarageDoor3x3_PoweredBlockVariantHelper,steelGarageDoor4x3_PoweredBlockVariantHelper,steelGarageDoor5x3_PoweredBlockVariantHelper,metalReinforcedWoodDrawBridgePowered" />
+        <passive_effect name="RecipeTagUnlocked" operation="base_set" level="55,100" value="1" tags="carBattery" />
         <passive_effect name="CraftingTier" operation="base_add" level="60,70,80,90,100" value="1,2,3,4,5" tags="carBattery" />
       </effect_group>
     </crafting_skill>
@@ -2637,7 +2637,7 @@
         </passive_effect>
         <passive_effect name="NoiseMultiplier" operation="perc_add" level="0,5" value="0,-.5" />
         <passive_effect name="CrouchSpeed" operation="perc_add" level="0,5" value="0,0.5" />
-        <passive_effect name="EnemySearchDuration" operation="perc_add" level="0,1,2,3,4,5" value="0,-.17,-.33,-.5,-.58,-.67" />
+        <passive_effect name="EnemySearchDuration" operation="perc_add" level="0,1,2,3,4,5" value="0,.2,.5,1,1.4,2" />
         <effect_description level="1" desc_key="perkFromTheShadowsRank1Desc" long_desc_key="perkFromTheShadowsRank1LongDesc" />
         <effect_description level="2" desc_key="perkFromTheShadowsRank2Desc" long_desc_key="perkFromTheShadowsRank2LongDesc" />
         <effect_description level="3" desc_key="perkFromTheShadowsRank3Desc" long_desc_key="perkFromTheShadowsRank3LongDesc" />
@@ -2918,7 +2918,8 @@
       <effect_group>
         <!-- Craft items in the chemical station faster -->
         <passive_effect name="CraftingTime" operation="perc_add" level="2,3,4,5" value="-.2,-.2,-.4,-.4" tags="chemStationCrafting" />
-        <!-- Heal sprains with splint or cast with level 1 -->
+        <!-- Heal sprains with splint or cast with level 1. Logic on items -->
+        <!-- Heal breaks with cast with level 3. Logic on cast -->
         <!-- Intellect weapons have an added 20% chance to dismember -->
         <passive_effect name="DismemberChance" operation="base_add" level="4,5" value=".2" tags="attIntellect" />
         <!-- Increase the XP gains with each level of the perk -->
@@ -3159,56 +3160,6 @@
         <passive_effect name="EntityDamage" operation="perc_add" level="1" value="0.5" tags="chainsaw" />
       </effect_group>
     </book>
-    <!-- *** -->
-    <!-- *** Needle_And_Thread_Volume_01_Winter_Gear -->
-    <!-- <book name="perkNeedleAndThreadWinterWear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadWinterWear" desc_key="perkNeedleAndThreadWinterWearDesc" long_desc_key="perkNeedleAndThreadWinterWearLongDesc"> -->
-    <!-- <effect_group> -->
-    <!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelFlannelShirt,apparelSweatshirt,apparelSkullCap"/> -->
-    <!-- </effect_group> -->
-    <!-- </book> -->
-    <!-- *** NEEDLE_AND_THREAD_VOLUME_02_LEG_GEAR -->
-    <!-- <book name="perkNeedleAndThreadLegwear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadLegwear" desc_key="perkNeedleAndThreadLegwearDesc" long_desc_key="perkNeedleAndThreadLegwearLongDesc"> -->
-    <!-- <effect_group> -->
-    <!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelDenimPants,apparelOveralls,apparelSkirt"/> -->
-    <!-- </effect_group> -->
-    <!-- </book> -->
-    <!-- *** NEEDLE_AND_THREAD_VOLUME_03_FOOT_GEAR -->
-    <!-- <book name="perkNeedleAndThreadFootwear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadFootwear" desc_key="perkNeedleAndThreadFootwearDesc" long_desc_key="perkNeedleAndThreadFootwearLongDesc"> -->
-    <!-- <effect_group> -->
-    <!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelWornBoots,apparelRunningShoesRegular,apparelCowboyBoots,apparelSuitDressShoes"/> -->
-    <!-- </effect_group> -->
-    <!-- </book> -->
-    <!-- *** NEEDLE_AND_THREAD_VOLUME_04_DESERT_GEAR -->
-    <!-- <book name="perkNeedleAndThreadDesertWear" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadDesertWear" desc_key="perkNeedleAndThreadDesertWearDesc" long_desc_key="perkNeedleAndThreadDesertWearLongDesc"> -->
-    <!-- <effect_group> -->
-    <!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelTankTop,apparelTShirtPlain,apparelCowboyHat,apparelDenimShortsPants"/> -->
-    <!-- </effect_group> -->
-    <!-- </book> -->
-    <!-- *** NEEDLE_AND_THREAD_VOLUME_05_DUSTERS -->
-    <!-- <book name="perkNeedleAndThreadDusters" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadDusters" desc_key="perkNeedleAndThreadDustersDesc" long_desc_key="perkNeedleAndThreadDustersLongDesc"> -->
-    <!-- <effect_group> -->
-    <!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelCoatLeatherDuster"/> -->
-    <!-- </effect_group> -->
-    <!-- </book> -->
-    <!-- *** NEEDLE_AND_THREAD_VOLUME_06_PUFFER_COATS -->
-    <!-- <book name="perkNeedleAndThreadPufferCoats" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadPufferCoats" desc_key="perkNeedleAndThreadPufferCoatsDesc" long_desc_key="perkNeedleAndThreadPufferCoatsLongDesc"> -->
-    <!-- <effect_group> -->
-    <!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelCoatPufferCoat"/> -->
-    <!-- </effect_group> -->
-    <!-- </book> -->
-    <!-- *** NEEDLE_AND_THREAD_VOLUME_07_POCKETS -->
-    <!-- <book name="perkNeedleAndThreadPockets" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="bookNeedleAndThreadPockets" desc_key="perkNeedleAndThreadPocketsDesc" long_desc_key="perkNeedleAndThreadPocketsLongDesc"> -->
-    <!-- <effect_group> -->
-    <!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="modClothingCargoStoragePocket"/> -->
-    <!-- </effect_group> -->
-    <!-- </book> -->
-    <!-- *** 7/7 NEEDLE_AND_THREAD_COMPLETE -->
-    <!-- <book name="perkNeedleAndThreadComplete" parent="skillNeedleAndThread" max_level="1" base_skill_point_cost="0" name_key="perkNeedleAndThreadCompleteName" desc_key="perkNeedleAndThreadCompleteDesc" long_desc_key="perkNeedleAndThreadCompleteLongDesc"> -->
-    <!-- <effect_group> -->
-    <!-- <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="apparelArmyPants,apparelArmyShirt"/> -->
-    <!-- </effect_group> -->
-    <!-- </book> -->
-    <!-- *** -->
     <!-- *** NIGHT_STALKER_VOLUME_01_STEALTH -->
     <book name="perkNightStalkerStealthDamage" parent="skillNightStalker" max_level="1" base_skill_point_cost="0" desc_key="perkNightStalkerStealthDamageDesc" long_desc_key="perkNightStalkerStealthDamageLongDesc">
       <effect_group>

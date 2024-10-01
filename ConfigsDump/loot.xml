@@ -5238,16 +5238,16 @@
   <lootgroup name="groupCars02">
     <item group="skillMagazines" loot_prob_template="low" />
     <item name="vehiclesSkillMagazine" loot_prob_template="low" />
-    <item group="groupToolsT0" loot_prob_template="veryLow" />
+    <item group="groupToolsT0" loot_prob_template="ProbT0" />
     <item group="groupToolsT1" loot_prob_template="ProbT1" />
-    <item group="groupWeaponsT0_Melee" loot_prob_template="veryLow" />
+    <item group="groupWeaponsT0_Melee" loot_prob_template="ProbT0" />
     <item group="groupWeaponsT1_Melee" loot_prob_template="ProbT1" />
   </lootgroup>
   <lootgroup name="groupCars03">
     <item group="skillMagazines" loot_prob_template="med" />
     <item group="groupAmmoSmall" loot_prob_template="low" />
     <item group="groupAmmoMedium" loot_prob_template="veryLow" />
-    <item group="groupWeaponsT0_Ranged" loot_prob_template="veryLow" />
+    <item group="groupWeaponsT0_Ranged" loot_prob_template="ProbT0" />
     <item group="groupWeaponsT1_Ranged" loot_prob_template="ProbT1" />
   </lootgroup>
   <lootgroup name="groupCars" count="all">
@@ -5814,7 +5814,7 @@
     <item name="resourceGlue" count="1,2" loot_prob_template="veryLow" />
   </lootgroup>
   <lootgroup name="groupBackpacks02">
-    <item group="groupWeaponsT0_All" />
+    <item group="groupWeaponsT0_All" loot_prob_template="ProbT0" />
     <item group="groupArmorScaled" />
     <item group="weaponParts" loot_prob_template="medHigh" />
     <item group="groupWeaponModsScaled" loot_prob_template="medLow" />
@@ -5836,7 +5836,7 @@
     <item name="drinkJarRiverWater" loot_prob_template="veryLow" />
   </lootgroup>
   <lootgroup name="groupCampingTents02">
-    <item group="groupWeaponsT0_All" />
+    <item group="groupWeaponsT0_All" loot_prob_template="ProbT0" />
     <item group="groupArmorScaled" />
     <item group="perkBooks" loot_prob_template="low" />
     <item name="meleeToolFlashlight02" loot_prob_template="low" />
@@ -6486,7 +6486,7 @@
     <!-- T5 Bonus Items -->
   </lootgroup>
   <!-- *** INFESTED_LOOT -->
-  <lootgroup name="groupInfestedT5MeleeRanged" loot_quality_template="qualTwitchT6Template">
+  <lootgroup name="groupInfestedT5MeleeRanged" loot_quality_template="qualTwitchT5Template">
     <item name="meleeWpnSpearT3SteelSpear" />
     <item name="meleeWpnClubT3SteelClub" />
     <item name="meleeWpnSledgeT3SteelSledgehammer" />
@@ -6813,7 +6813,7 @@
     <!-- <item group="groupQuestT2MediumArmorBonus"/> -->
     <!-- <item group="groupQuestT2HeavyArmorBonus"/> -->
     <item group="groupQuestForgedSteel" />
-    <item group="groupQuestT3LegendaryFirearms" />
+    <item group="groupQuestT3Firearms" />
     <item group="groupQuestSteelShapes" />
   </lootgroup>
   <lootgroup name="groupAirDrop01">
@@ -8280,7 +8280,7 @@
     <item group="groupPopNPillsCrate" />
   </lootcontainer>
   <!-- beer cooler -->
-  <lootcontainer name="beerCooler" count="1,2" size="6,3" sound_open="UseActions/open_cooler" sound_close="UseActions/close_cooler" loot_quality_template="qualBaseTemplate" destroy_on_close="empty">
+  <lootcontainer name="beerCooler" count="1,2" size="6,3" sound_open="UseActions/coolermini_open" sound_close="UseActions/coolermini_close" loot_quality_template="qualBaseTemplate" destroy_on_close="empty">
     <item group="groupBeerCooler" />
   </lootcontainer>
   <!-- working stiffs -->
